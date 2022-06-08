@@ -1,0 +1,21 @@
+{
+  "name": "arthur-mountain-line-login",
+  "description": "arthur-mountain custom line-login-sdk",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc -w .",
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "line",
+    "line-login",
+    "nodejs"
+  ],
+  "author": "arthur-mountain",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.40"
+  }
+}
