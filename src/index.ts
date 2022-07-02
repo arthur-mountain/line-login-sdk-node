@@ -1,2 +1,2 @@
-export { default as LineLogin } from 'lib/module'
-export { default as LineFunc } from 'lib/func'
+export { default as LineLoginClass } from './lib/lineLoginClass'
+export { default as lineLogin } from './lib/lineLogin'

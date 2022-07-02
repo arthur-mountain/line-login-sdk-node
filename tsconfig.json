@@ -1,17 +1,21 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "lib": ["DOM", "esnext", "es2019",],
+    "lib": [
+      "DOM",
+      "esnext",
+      "es2019",
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": ".",
-    "paths": {
-      "utils/*": ["./src/utils/*" ],
-      "constants/*": [ "./src/constants/*"],
-      "lib/*": ["./src/lib/*"],
-    },
-    "typeRoots": ["./src/types", "node_module/@types",],
-    "types": ["node"],
+    "typeRoots": [
+      "./src/types",
+      "node_module/@types",
+    ],
+    "types": [
+      "node"
+    ],
     "noEmitOnError": true,
     "outDir": "./dist",
     "removeComments": false,
@@ -29,6 +33,11 @@
     "noEmit": false,
     "resolveJsonModule": true,
   },
-  "include": ["./src/**/*",],
-  "exclude": [ "./node_module",  "./dist",]
+  "include": [
+    "./src/**/*",
+  ],
+  "exclude": [
+    "./node_module",
+    "./dist",
+  ]
 }

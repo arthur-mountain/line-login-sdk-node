@@ -1,5 +1,5 @@
-declare namespace LINE{
-  interface AccessToken{
+declare namespace LINE {
+  interface AccessToken {
     access_token: string;
   }
 }

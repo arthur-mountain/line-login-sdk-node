@@ -1,6 +1,4 @@
-import {
-  checkLineLoginConfig,
-} from '../utils/line.js'
+import { checkLineLoginConfig, } from '../utils/line.js'
 import { httpPost, } from '../utils/http.js'
 import {
   LINE_LOGIN_ENDPOINT,
@@ -18,10 +16,10 @@ function createLineLoginURL(config: Main.LineLoginUrl): string {
   const query = new URLSearchParams(searchParams);
   url.search = query.toString()
 
-  return url.href;
+  return url.href
 }
 
-async function getAccessToken({ code, client_id, redirect_uri }: Main.AccessToken): Promise<LINE.AccessToken> {
+async function getAccessToken({ code, client_id, redirect_uri }: Main.AccessToken): Promise<[LINE.AccessToken, Error]> {
   const data = `grant_type=authorization_code&client_id=${client_id}&code=${code}&redirect_uri=${redirect_uri}`;
 
   try {
@@ -30,14 +28,13 @@ async function getAccessToken({ code, client_id, redirect_uri }: Main.AccessToke
       data,
     }) as LINE.AccessToken;
 
-    return resp;
+    return [resp, null];
   } catch (error) {
     console.warn("🚀 ~ getAccessToken ~ error: \n", error)
-    return error
+    return [null, error]
   }
 }
 
-// my line login sdk
 export default {
   createLineLoginURL,
   getAccessToken
