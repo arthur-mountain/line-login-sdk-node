@@ -43,4 +43,9 @@ declare namespace MAIN {
     nonce?: string;
     userId?: string;
   }
+
+  interface ErrorMessage {
+    error: string;
+    message: string;
+  }
 }

@@ -1,2 +1,11 @@
-export { default as LineLoginClass } from './lib/lineLoginClass'
-export { default as lineLogin } from './lib/lineLogin'
+import LineLoginClass from './lib/lineLoginClass'
+import lineLogin from './lib/lineLogin'
+import { generateCodeVerifier, getLoginPkceQuery, generateNonce } from './utils/line'
+
+export default {
+  LineLoginClass,
+  lineLogin,
+  generateCodeVerifier,
+  getLoginPkceQuery,
+  generateNonce
+}

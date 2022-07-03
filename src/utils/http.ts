@@ -29,14 +29,20 @@ export function httpGet({ url, customConfig = {} }) {
   })
 }
 
-export function httpPost({ url, data, customConfig = {} }) {
+export function httpPost({
+  url,
+  data,
+  customConfig = { headers: {} }
+}) {
+  const { headers, ...configs } = customConfig;
   const config = {
+    method: 'POST',
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
-      'Content-Length': Buffer.byteLength(data)
+      "Content-Length": Buffer.byteLength(data),
+      ...headers
     },
-    method: 'POST',
-    ...customConfig
+    ...configs,
   }
 
   return new Promise((resolve, reject) => {

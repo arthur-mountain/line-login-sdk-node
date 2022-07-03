@@ -61,6 +61,6 @@ declare namespace LINE {
 
   interface ErrorResponse {
     error: string;
-    message: string;
+    error_description: string;
   }
 }
